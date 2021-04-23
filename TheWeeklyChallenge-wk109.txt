@@ -55,7 +55,7 @@ Fig. 2
 
 
 Fig. 3
-This kind of sharing edges between two boxes will not happen from the input.
+sharing edges between two boxes
         +--------------+  
         |              |  
         |      a       | 
