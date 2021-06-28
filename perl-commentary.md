@@ -1,3 +1,14 @@
+**為甚麼我不會推介任何programming程度嘅人學Perl？**
+
+＜bug＞ 
+
+編程資歷明顯高過我嘅唔使聽我講乜 XDDDD
+
+如果本身已經識用至少四、五種 programming languages （識->可以寫個中型程式仔）嘅人
+，再學多一種 programming language 去學語法和背後的 ecosystem (libraries, communities)來寫小型程式唔會有太多難度。
+
+＜／bug＞
+
 == 依家常用 Perl 嘅 fields 有 ==
 
 * Linux admin (一個 Perl 就可以發揮到 awk, sed 和 grep 等嘅功能，（據我理解）呢個亦係 Perl 創始人 Larry Wall 寫 Perl 出來的原意。）
