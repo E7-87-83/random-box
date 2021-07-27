@@ -10,8 +10,8 @@ ok is_square(
               [cos(atan2(1,5)), sin(atan2(1,5))], [-sin(atan2(1,5)), cos(atan2(1,5))],
               [-cos(atan2(1,5)), -sin(atan2(1,5))],[sin(atan2(1,5)), -cos(atan2(1,5))]
             )  
-              == 1, "arctan(1/5) by atan2(), fail to catch the equalities due to floating-point";  
-
+              == 1, "arctan(1/5) by atan2(), caught by the equalities";  
+                          
 ok is_square( 
               [2.7*cos(atan2(1,5)), 2.7*sin(atan2(1,5))], [-2.7*sin(atan2(1,5)), 2.7*cos(atan2(1,5))],
               [-2.7*cos(atan2(1,5)), -2.7*sin(atan2(1,5))],[2.7*sin(atan2(1,5)), -2.7*cos(atan2(1,5))]
