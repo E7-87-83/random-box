@@ -40,7 +40,7 @@ ok is_square( [1, 2] , [4,3], [3,1], [2,4] ) == 1, "Knight's square";
 ok is_square( [1, 1] , [-1, 1], [1,-1], [-1,-1] ) == 1, "centre at origin";
 
 ----------------
-Result
+Result (vector sum approach, ch-2a.pl)
 
 1..14
 ok 1 - on x-axis and y-axis
