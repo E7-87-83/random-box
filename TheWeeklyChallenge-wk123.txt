@@ -1,0 +1,23 @@
+ok is_square( [5/sqrt(26), 1/sqrt(26)], 
+              [-1/sqrt(26), 5/sqrt(26)],
+              [-5/sqrt(26), -1/sqrt(26)], 
+              [1/sqrt(26), -5/sqrt(26)]) == 1,
+             "inclined by arctan(1/5), centre at origin"; 
+
+ok is_square( 
+              [cos(atan2(1,5)), sin(atan2(1,5))], [-sin(atan2(1,5)), cos(atan2(1,5))],
+              [-cos(atan2(1,5)), -sin(atan2(1,5))],[sin(atan2(1,5)), -cos(atan2(1,5))]
+            )  
+              == 1, "arctan(1/5) by atan2(), caught by the equalities";  
+
+ok is_square( 
+              [2.7*cos(atan2(1,5)), 2.7*sin(atan2(1,5))], [-2.7*sin(atan2(1,5)), 2.7*cos(atan2(1,5))],
+              [-2.7*cos(atan2(1,5)), -2.7*sin(atan2(1,5))],[2.7*sin(atan2(1,5)), -2.7*cos(atan2(1,5))]
+            )  
+              == 1, "arctan(1/5) by atan2() of larger size (multipled by 2.7), caught by the equalities";  
+
+ok is_square( 
+              [0.0009*cos(atan2(1,5)), 0.0009*sin(atan2(1,5))], [-0.0009*sin(atan2(1,5)), 0.0009*cos(atan2(1,5))],
+              [-0.0009*cos(atan2(1,5)), -0.0009*sin(atan2(1,5))],[0.0009*sin(atan2(1,5)), -0.0009*cos(atan2(1,5))]
+            )  
+              == 1, "arctan(1/5) by atan2() of smaller size (multiple by 0.0009), caught by the equalities";  
