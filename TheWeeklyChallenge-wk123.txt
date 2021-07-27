@@ -1,3 +1,5 @@
+ok is_square( [1,0], [0,1], [-1,0],[0,-1]) == 1, "on x-axis and y-axis";
+
 ok is_square( [5/sqrt(26), 1/sqrt(26)], 
               [-1/sqrt(26), 5/sqrt(26)],
               [-5/sqrt(26), -1/sqrt(26)], 
@@ -8,7 +10,7 @@ ok is_square(
               [cos(atan2(1,5)), sin(atan2(1,5))], [-sin(atan2(1,5)), cos(atan2(1,5))],
               [-cos(atan2(1,5)), -sin(atan2(1,5))],[sin(atan2(1,5)), -cos(atan2(1,5))]
             )  
-              == 1, "arctan(1/5) by atan2(), caught by the equalities";  
+              == 1, "arctan(1/5) by atan2(), fail to catch the equalities due to floating-point";  
 
 ok is_square( 
               [2.7*cos(atan2(1,5)), 2.7*sin(atan2(1,5))], [-2.7*sin(atan2(1,5)), 2.7*cos(atan2(1,5))],
@@ -17,7 +19,41 @@ ok is_square(
               == 1, "arctan(1/5) by atan2() of larger size (multipled by 2.7), caught by the equalities";  
 
 ok is_square( 
+              [2.8*cos(atan2(1,5)), 2.8*sin(atan2(1,5))], [-2.8*sin(atan2(1,5)), 2.8*cos(atan2(1,5))],
+              [-2.8*cos(atan2(1,5)), -2.8*sin(atan2(1,5))],[2.8*sin(atan2(1,5)), -2.8*cos(atan2(1,5))]
+            )  
+              == 1, "arctan(1/5) by atan2() of larger size (multipled by 2.8), caught by the equalities";  
+
+ok is_square( 
+              [4.0*cos(atan2(1,5)), 4.0*sin(atan2(1,5))], [-4.0*sin(atan2(1,5)), 4.0*cos(atan2(1,5))],
+              [-4.0*cos(atan2(1,5)), -4.0*sin(atan2(1,5))],[4.0*sin(atan2(1,5)), -4.0*cos(atan2(1,5))]
+            )  
+              == 1, "arctan(1/5) by atan2() of larger size (multipled by 4.0), caught by the equalities";  
+
+ok is_square( 
               [0.0009*cos(atan2(1,5)), 0.0009*sin(atan2(1,5))], [-0.0009*sin(atan2(1,5)), 0.0009*cos(atan2(1,5))],
               [-0.0009*cos(atan2(1,5)), -0.0009*sin(atan2(1,5))],[0.0009*sin(atan2(1,5)), -0.0009*cos(atan2(1,5))]
             )  
-              == 1, "arctan(1/5) by atan2() of smaller size (multiple by 0.0009), caught by the equalities";  
+              == 1, "arctan(1/5) by atan2() of a much smaller size (multiple by 0.0009), caught by the equalities";  
+
+ok is_square( [1, 2] , [4,3], [3,1], [2,4] ) == 1, "Knight's square";
+ok is_square( [1, 1] , [-1, 1], [1,-1], [-1,-1] ) == 1, "centre at origin";
+
+----------------
+Result
+
+1..14
+ok 1 - on x-axis and y-axis
+ok 2 - inclined by arctan(1/5), centre at origin
+not ok 3 - arctan(1/5) by atan2(), fail to catch the equalities due to floating-point
+ok 4 - arctan(1/5) by atan2() of larger size (multipled by 2.7), caught by the equalities
+not ok 5 - arctan(1/5) by atan2() of larger size (multipled by 2.8), caught by the equalities
+not ok 6 - arctan(1/5) by atan2() of larger size (multipled by 4.0), caught by the equalities
+not ok 7 - arctan(1/5) by atan2() of a much smaller size (multiple by 0.0009), caught by the equalities
+ok 8 - Knight's square
+ok 9 - centre at origin
+ok 10 - standard 2**3
+ok 11 - centre at origin
+ok 12 - a rotated cube centred at (2,2,1)
+ok 13 - this is not a cube
+ok 14 - hypercube
